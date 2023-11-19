@@ -69,29 +69,13 @@ function Home() {
         <div> Check out the leaderboard for best records!</div>
 
         <div className="mt-10 flex flex-col w-fit ">
-          <div className="mx-auto mb-2 font-bold text-lg">
-            Find these people!
-          </div>
+          <div className="mx-auto mb-2 font-bold text-lg">Find them!</div>
           <div className="flex flex-row self-center justify-self-center w-fit">
-            <CharacterPanel img={waldo} name="waldo" />
-
-            <img
-              className=" border-black border rounded-xl mr-3 w-25 h-25"
-              src={wendy}
-              alt="wendy"
-            />
-            <img
-              className=" border-black border rounded-xl mr-3 w-25 h-25"
-              src={wizard}
-              alt="wizard"
-            />
-            <img
-              className=" border-black border rounded-xl mr-3 w-25 h-25"
-              src={odlaw}
-              alt="odlaw"
-            />
+            <CharacterPanel img={waldo} name="Waldo" />
+            <CharacterPanel img={wendy} name="Wenda" />
+            <CharacterPanel img={wizard} name="Wizard" />
+            <CharacterPanel img={odlaw} name="Odlaw" />
           </div>
-
           <div className="mx-auto mt-10 mb-2 font-bold text-lg">
             Select a game to play!
           </div>
