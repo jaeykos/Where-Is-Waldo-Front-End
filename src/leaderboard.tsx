@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./leaderboard.css";
+import backEndUrl from "./backEndUrl";
 
 function Leaderboard() {
   const [isDataRetrieved, setIsDataRetrieved] = useState(false);
@@ -7,7 +8,7 @@ function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("${backEndUrl}/leaderboard")
+    fetch(`${backEndUrl}/leaderboard`)
       .then((res) => {
         return res.json();
       })
