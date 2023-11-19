@@ -39,19 +39,16 @@ function Home() {
     );
   }
 
-  function CharacterPanel(
-    { img }: { img: string },
-    { name }: { name: string }
-  ) {
+  function CharacterPanel(prop: { img: string; name: string }) {
     return (
       <>
         <div className="flex flex-col items-center">
           <img
             className=" border-black border rounded-xl mr-3 w-25 h-25"
-            src={img}
-            alt={name}
+            src={prop.img}
+            alt={prop.name}
           />
-          <div className="font-bold">{name}</div>
+          <div className="font-bold">{prop.name}</div>
         </div>
       </>
     );

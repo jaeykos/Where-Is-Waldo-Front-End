@@ -20,7 +20,6 @@ function Game() {
   const [isFirstClickDone, setIsFirstClickDone] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
   const [hintCoordinates, setHintCoordinates] = useState<any>(null);
-  const [boxes, setBoxes] = useState([]);
   const [isHintOn, setIsHintOn] = useState(false);
   const [name, setName] = useState("");
   const [characters, setCharacters] = useState([
