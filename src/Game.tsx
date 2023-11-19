@@ -7,6 +7,7 @@ import easyMap from "./assets/Easy.jpeg";
 import mediumMap from "./assets/Medium.jpeg";
 import hardMap from "./assets/Hard.jpeg";
 import closeIcon from "./assets/close-svgrepo-com.svg";
+import backEndUrl from "./backEndUrl";
 
 import "./Game.css";
 import { useNavigate, useParams } from "react-router-dom";
@@ -58,7 +59,7 @@ function Game() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:3000/game/${difficulty}/hint`)
+    fetch(`${backEndUrl}/game/${difficulty}/hint`)
       .then((res) => {
         return res.json();
       })
@@ -136,7 +137,7 @@ function Game() {
       y: clickLocation[1],
     });
 
-    fetch(`http://localhost:3000/game/${difficulty}/${characterName}`, {
+    fetch(`${backEndUrl}/game/${difficulty}/${characterName}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -163,7 +164,7 @@ function Game() {
           setIsSelected(false);
         } else {
           //alert user is incorrect, but with fade away notificaion
-          alert("you made wrong selection");
+          alert("Try again!");
         }
       })
       .catch((err) => {
@@ -254,7 +255,7 @@ function Game() {
       },
       difficulty: difficulty,
     });
-    fetch(`http://localhost:3000/leaderboard/`, {
+    fetch(`${backEndUrl}/leaderboard/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

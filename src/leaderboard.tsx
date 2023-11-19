@@ -7,7 +7,7 @@ function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/leaderboard")
+    fetch("${backEndUrl}/leaderboard")
       .then((res) => {
         return res.json();
       })
