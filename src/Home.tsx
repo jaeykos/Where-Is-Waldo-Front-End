@@ -2,8 +2,8 @@ import waldo from "./assets/waldo.jpeg";
 import wendy from "./assets/wendy.jpeg";
 import wizard from "./assets/wizard.jpeg";
 import odlaw from "./assets/odlaw.jpeg";
-import easyMap from "./assets/Easy.jpeg";
-import mediumMap from "./assets/Medium.jpeg";
+import easyMap from "./assets/easy.jpeg";
+import mediumMap from "./assets/medium.jpeg";
 import hardMap from "./assets/hard.jpeg";
 import "./Home.css";
 
