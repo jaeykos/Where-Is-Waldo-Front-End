@@ -6,11 +6,16 @@ import easyMap from "./assets/Easy.jpeg";
 import mediumMap from "./assets/Medium.jpeg";
 import hardMap from "./assets/Hard.jpeg";
 import "./Home.css";
+import backEndUrl from "./backEndUrl";
 
 function Home() {
   interface DifficultyProps {
     difficulty: string;
   }
+
+  fetch(`${backEndUrl}/leaderboard`).then((res) => {
+    return res.json();
+  });
 
   function GameSelectionPanel({ difficulty }: DifficultyProps) {
     let map = null;
