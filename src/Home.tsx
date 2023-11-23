@@ -1,3 +1,4 @@
+import { useState } from "react";
 import waldo from "./assets/waldo.jpeg";
 import wendy from "./assets/wendy.jpeg";
 import wizard from "./assets/wizard.jpeg";
@@ -13,9 +14,17 @@ function Home() {
     difficulty: string;
   }
 
-  fetch(`${backEndUrl}/leaderboard`).then((res) => {
-    return res.json();
-  });
+  const [isServerActive, setIsServerActive] = useState(false);
+
+  fetch(`${backEndUrl}/leaderboard`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setIsServerActive(true);
+      }
+    });
 
   function GameSelectionPanel({ difficulty }: DifficultyProps) {
     let map = null;
@@ -59,8 +68,23 @@ function Home() {
     );
   }
 
+  function WaitScreen() {
+    if (!isServerActive) {
+      return (
+        <>
+          <div className="flex flex-col justify-center items-center fixed w-full h-full bg-gray-900 opacity-80 z-40">
+            <div className="bg-white w-full h-fit text-6xl p-3 text-center">
+              Please wait for about one minute for server to load...
+            </div>
+          </div>
+        </>
+      );
+    }
+  }
+
   return (
     <>
+      <WaitScreen />
       <div className="flex flex-col p-3 text-lg">
         <div> Welcome! This website is a project from The Odin Project.</div>
         <div>
